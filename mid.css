@@ -1,0 +1,63 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --cell-size: 50px;
+    --mark-size: calc(var(--cell-size) * .8)
+}
+
+ div nav {
+    display:flex;
+    justify-content: space-between;
+ }
+
+ #nav-div {
+    width: 100vw;
+    display:flex;
+    justify-content: center;
+ }
+
+h3 {
+    margin-top: 4px;
+}
+
+#mid-header {
+    /* position: relative;
+    left: 45%; */
+    margin-right: 112px;
+}
+
+#logo {
+    margin-left: 38px;
+}
+
+#stage {
+    width: 90vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6,auto);
+
+}
+
+.cell {
+    margin-top: 10px ;
+    height: 65px;
+    width: 60px;
+    border : solid 7px lightslategrey;
+    border-radius: 5px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    cursor: pointer;
+    margin: 10px; 
+}
+
+#beat-control-center {
+    height: auto;
+    display:flex;
+    justify-content: center;
+    margin: 30px;
+}
