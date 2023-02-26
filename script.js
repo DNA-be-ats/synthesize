@@ -17,11 +17,12 @@ function makeGrid() {
     let startX = 345
     let startY = 250
     for (let i = 0; i < 3; i++) {
+        startX = 345
+        startY += 100
         grid.push([])
         for (let j = 0; j < 6; j++) {
             startX += 100
-            const currCell = makeCell(startX, startY)
-            
+             makeCell(startX, startY)
             grid[i].push(0)
         }
     }
@@ -30,7 +31,7 @@ function makeGrid() {
 
 function makeCell (x, y) {
     return add([
-        sprite('cell'),
+        // sprite('cell'),
         pos(x, y),
         rect(60, 70),
         outline(4),
