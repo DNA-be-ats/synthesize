@@ -58,3 +58,9 @@ h3 {
     justify-content: center;
     margin: 30px;
 }
+
+#track-line {
+    width: 10px;
+    height: 250px;
+    background-color: white;
+}
