@@ -35,8 +35,8 @@ h3 {
 #stage {
     /* width: 90vw;
     height: 100vh; */
-    display: grid;
-    grid-template-columns: repeat(6,auto);
+     display: grid;
+    grid-template-columns: repeat(7,auto); 
 
 }
 
@@ -66,4 +66,24 @@ h3 {
 
 .active > * {
     width: 90px
+}
+
+#sample-row {
+    margin-right:70px;
+}
+
+#bass {
+    background-color: red;
+}
+
+#symbol {
+    background-color: green;
+}
+
+#something-else {
+    background-color: blue;
+}
+
+#row6 {
+    margin-right: 85px;
 }

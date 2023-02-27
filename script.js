@@ -14,8 +14,7 @@ setTrackLinePosition()
 
 
 
-resumeButton.addEventListener("click", /*() => {
-   const movingLine = setInterval(*/moveTrackLine/*,40)}*/)
+resumeButton.addEventListener("click", moveTrackLine)
 atTheReady.forEach(cell => {
     cell.element.addEventListener(true, () => {
         console.log(yeah)
@@ -53,13 +52,14 @@ function setUpTrackLine() {
         isTouchingRow ()
         currPositionX++
         const newPosition = currPositionX
-        if(newPosition >= stageWidth*2.05) clearInterval(anim)
+        if(newPosition >= stageWidth*1.46) clearInterval(anim)
         trackLine.style.left = `${newPosition}px`;
     }
  }
 
 function setTrackLinePosition () {
-    trackLine.style.left = `${stageWidth / 1.05}px`;
+    const row1 = document.querySelector("#row1")
+    trackLine.style.left = `${row1.getBoundingClientRect().left - 10}px`;
 }
 
 function isTouchingRow () {
@@ -72,3 +72,7 @@ function isTouchingRow () {
         } 
     }
 }
+
+// function trackLineIsAtEnd() {
+
+// }
