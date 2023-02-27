@@ -46,8 +46,7 @@ h3 {
     width: 60px;
     border : solid 7px lightslategrey;
     border-radius: 5px;
-    background: black;
-    position: relative; 
+    background: black; 
     cursor: pointer;
     margin: 10px; 
 }
@@ -63,4 +62,8 @@ h3 {
     width: 10px;
     height: 250px;
     background-color: white;
+}
+
+.active > * {
+    width: 90px
 }

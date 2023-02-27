@@ -1,33 +1,74 @@
 const stage = document.querySelector("#stage")
 const resumeButton = document.querySelector("#resume")
-const trackLine = makeTrackLine()
+const trackLine = setUpTrackLine()
+const atTheReady = setupCells()
+const allRows = document.querySelectorAll(".row")
+
+
+
+
+
 stageWidth = stage.offsetWidth
 stageHeight = stage.offsetHeight
+setTrackLinePosition()
 
 
-resumeButton.addEventListener("click", () => setInterval(moveTrackLine, 250))
 
-function makeTrackLine() {
-    const gameItem = {
-        element: document.querySelector('#track-line'),
-        x: 0,
-        y: 0,
-        width: 0,
-        height: 0,
-        directionX: 0,
-        directionY: 0,
-        speed: 10,
-    }
-    gameItem.width = gameItem.element.offsetWidth;
-    gameItem.height = gameItem.element.offsetHeight;
-    gameItem.element.style.position = "absolute";
-    stage.appendChild(gameItem.element);
+resumeButton.addEventListener("click", /*() => {
+   const movingLine = setInterval(*/moveTrackLine/*,40)}*/)
+atTheReady.forEach(cell => {
+    cell.element.addEventListener(true, () => {
+        console.log(yeah)
+    })
+})
+
+function setupCells () {
+    const collectedCells = document.querySelectorAll(".cell")
+    return Array.from(collectedCells).map((cell) => {
+        return {
+            element: cell,
+            x : cell.getBoundingClientRect().x,
+            y : cell.getBoundingClientRect().y,
+            width : cell.getBoundingClientRect().width,
+            height : cell.getBoundingClientRect().height,
+            active: false,
+            sound: null,
+        }
+    }) 
+}
+
+function setUpTrackLine() {
+    const gameItem = document.querySelector('#track-line')
+    gameItem.width = gameItem.offsetWidth;
+    gameItem.height = gameItem.offsetHeight;
+    gameItem.style.position = "absolute";
     return gameItem;
 }
 
-function moveTrackLine() {
-    trackLine.x += trackLine.directionX * trackLine.speed;
-    trackLine.y += trackLine.directionY * trackLine.speed;
-    trackLine.element.style.left = `${trackLine.x}px`;
-    trackLine.element.style.top = `${trackLine.y}px`;
+ function moveTrackLine() {
+    setTrackLinePosition()
+    let currPositionX = trackLine.getBoundingClientRect().left
+    const anim = setInterval(animate,5)
+    function animate() {
+        isTouchingRow ()
+        currPositionX++
+        const newPosition = currPositionX
+        if(newPosition >= stageWidth*2.05) clearInterval(anim)
+        trackLine.style.left = `${newPosition}px`;
+    }
+ }
+
+function setTrackLinePosition () {
+    trackLine.style.left = `${stageWidth / 1.05}px`;
+}
+
+function isTouchingRow () {
+    for(let i = 0; i < allRows.length; i++) {
+        const currRow = allRows[i]
+        if(trackLine.getBoundingClientRect().x + trackLine.offsetWidth > currRow.getBoundingClientRect().x && trackLine.getBoundingClientRect().x < currRow.getBoundingClientRect().x + currRow.offsetWidth){
+            currRow.classList.add("active")
+        } else{
+            currRow.classList.remove("active")
+        } 
+    }
 }
