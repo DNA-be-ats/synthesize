@@ -76,3 +76,15 @@ function isTouchingRow () {
 // function trackLineIsAtEnd() {
 
 // }
+
+/////////////////////////////////////////////
+////Attempting Audio Import for Samples
+////////////////////////////////////////////
+bass.addEventListener("click", function(){
+    const bassAudio = document.getElementById("sample-sound");
+    // const audioCtx = new AudioContext(); 
+    bassAudio.play();
+
+})
+
+
