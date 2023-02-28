@@ -23,7 +23,17 @@ setTrackLinePosition()
 resumeButton.addEventListener("click", moveTrackLine)
 atTheReady.forEach(cell => {
     cell.element.addEventListener('click', () => {
-        cell.element.parentElement.classList.add("active-row")
+        const currCell = cell.element
+        const childrenOfRow = Array.from(currCell.parentNode.children)
+        console.log(childrenOfRow)
+        if(childrenOfRow.indexOf(currCell) === 0){
+            currCell.style.backgroundColor = "#970380"
+        } else if(childrenOfRow.indexOf(currCell) === 1){
+            currCell.style.backgroundColor = "#2e1258"
+        } else if(childrenOfRow.indexOf(currCell) === 2){
+            currCell.style.backgroundColor = "#fae273"
+        } 
+        // cell.element.parentElement.classList.add("active-row")
     })
 })
 // BPMinput.addEventListener("submit", (e) =>{
@@ -45,6 +55,7 @@ function setupCells () {
         }
     }) 
 }
+
 
 function setUpTrackLine() {
     const gameItem = document.querySelector('#track-line')
@@ -84,14 +95,14 @@ function isTouchingRow () {
 }
 
 function activeCells(row) {
-//RE-VISIT THIS ONCE YOU MADE CELLS CLICKABLE
+// RE-VISIT THIS ONCE YOU MADE CELLS CLICKABLE
 
-    // row.classList.add("active-row")
-    // row.forEach(cell => {
-    //     cell.active = true
-    //     cell.sound = new Audio(cell.element.dataset.sound)
-    //     cell.sound.play()
-    // })
+//     row.classList.add("active-row")
+//     row.forEach(cell => {
+//         cell.active = true
+//         cell.sound = new Audio(cell.element.dataset.sound)
+//         cell.sound.play()
+//     })
 }
 
 // function playSound(cell) {
@@ -105,11 +116,10 @@ function changeBPM() {
 /////////////////////////////////////////////
 ////Attempting Audio Import for Samples
 ////////////////////////////////////////////
-bass.addEventListener("click", function(){
+bass.addEventListener("click", function(e){
+    console.log(e)
     const bassAudio = document.getElementById("sample-sound");
     // const audioCtx = new AudioContext(); 
     bassAudio.play();
 
 })
-
-// Hello
