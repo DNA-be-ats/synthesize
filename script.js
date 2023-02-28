@@ -22,20 +22,15 @@ setTrackLinePosition()
 
 resumeButton.addEventListener("click", moveTrackLine)
 atTheReady.forEach(cell => {
-    cell.element.addEventListener('click', () => {
-        const currCell = cell.element
-        const childrenOfRow = Array.from(currCell.parentNode.children)
-        console.log(childrenOfRow)
-        if(childrenOfRow.indexOf(currCell) === 0){
-            currCell.style.backgroundColor = "#970380"
-        } else if(childrenOfRow.indexOf(currCell) === 1){
-            currCell.style.backgroundColor = "#2e1258"
-        } else if(childrenOfRow.indexOf(currCell) === 2){
-            currCell.style.backgroundColor = "#fae273"
-        } 
-        // cell.element.parentElement.classList.add("active-row")
-    })
+    // cell.element.addEventListener('dbclick', (e) => {
+    //     console.log(e)
+    //     const clickedCell = e.target
+    //     let clickedCellStyle = clickedCell.style
+    //     clickedCellStyle.backgroundColor = "red"
+    // })
+    cell.element.addEventListener('click', changeCellSate)
 })
+
 // BPMinput.addEventListener("submit", (e) =>{
 //     e.preventDefault()
 //     console.log(e)
@@ -123,3 +118,41 @@ bass.addEventListener("click", function(e){
     bassAudio.play();
 
 })
+
+function changeCellSate(event) {
+    const clickedCell = event.target
+    let clickedCellStyle = clickedCell.style
+    if(clickedCell.classList.contains("active-cell")) {
+        clickedCell.classList.remove("active-cell")
+        clickedCellStyle.backgroundColor = "black"
+    } else {
+        const childrenOfRow = Array.from(clickedCell.parentNode.children)
+        clickedCell.classList.add("active-cell")
+        if(childrenOfRow.indexOf(clickedCell) === 0){
+            clickedCellStyle.backgroundColor = "#970380"
+        } else if(childrenOfRow.indexOf(clickedCell) === 1){
+            clickedCellStyle.backgroundColor = "#2e1258"
+        } else if(childrenOfRow.indexOf(clickedCell) === 2){
+            clickedCellStyle.backgroundColor = "#fae273"
+        } 
+    }
+   
+}
+
+// function chooseCellColor(Cell) {
+    
+//     if(childrenOfRow.indexOf(clickedCell) === 0){
+//         clickedCellStyle.backgroundColor = "#970380"
+//     } else if(childrenOfRow.indexOf(clickedCell) === 1){
+//         clickedCellStyle.backgroundColor = "#2e1258"
+//     } else if(childrenOfRow.indexOf(clickedCell) === 2){
+//         clickedCellStyle.backgroundColor = "#fae273"
+//     } 
+// }
+// function rightclick() {
+//     const rightclick;
+//     const e = window.event;
+//     if (e.which) rightclick = (e.which == 3);
+//     else if (e.button) rightclick = (e.button == 2);
+//     alert(rightclick); // true or false, you can trap right click here by if comparison
+// }

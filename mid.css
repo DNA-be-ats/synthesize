@@ -34,8 +34,6 @@ h3 {
 }
 
 #mid-header {
-    /* position: relative;
-    left: 45%; */
     margin-right: 112px;
 }
 
@@ -44,8 +42,6 @@ h3 {
 }
 
 #stage {
-    /* width: 90vw;
-    height: 100vh; */
      display: grid;
     grid-template-columns: repeat(9,auto); 
 
@@ -73,14 +69,6 @@ h3 {
     width: 10px;
     height: 250px;
     background-color: white;
-}
-
-/* .active-row > * {
-
-} */
-
-.active-cell {
-    width: 90px
 }
 
 #sample-row {
