@@ -2,6 +2,17 @@
     box-sizing: border-box;
 }
 
+/* body {
+    width:100vw;
+    height:100vh;
+    background-image: url(https://img.freepik.com/free-vector/neon-synthwave-border-dark-purple-blog-banner-template-vector_53876-136308.jpg);
+} */
+
+#background {
+    width: 100vw;
+    height: 100vh;
+}
+
 :root {
     --cell-size: 50px;
     --mark-size: calc(var(--cell-size) * .8)
@@ -36,7 +47,7 @@ h3 {
     /* width: 90vw;
     height: 100vh; */
      display: grid;
-    grid-template-columns: repeat(7,auto); 
+    grid-template-columns: repeat(9,auto); 
 
 }
 
@@ -64,7 +75,11 @@ h3 {
     background-color: white;
 }
 
-.active > * {
+/* .active-row > * {
+
+} */
+
+.active-cell {
     width: 90px
 }
 
@@ -73,17 +88,17 @@ h3 {
 }
 
 #bass {
-    background-color: red;
+    background-color: #970380;
 }
 
 #symbol {
-    background-color: green;
+    background-color: #2e1258;
 }
 
 #something-else {
-    background-color: blue;
+    background-color: #fae273;
 }
 
-#row6 {
+#row8 {
     margin-right: 85px;
 }

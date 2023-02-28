@@ -3,6 +3,12 @@ const resumeButton = document.querySelector("#resume")
 const trackLine = setUpTrackLine()
 const atTheReady = setupCells()
 const allRows = document.querySelectorAll(".row")
+const BPMButton = document.querySelector("#BPM")
+const BPMinput = document.querySelector("#BPMinput")
+
+
+let currBPM = 120
+
 
 
 
@@ -16,10 +22,14 @@ setTrackLinePosition()
 
 resumeButton.addEventListener("click", moveTrackLine)
 atTheReady.forEach(cell => {
-    cell.element.addEventListener(true, () => {
-        console.log(yeah)
+    cell.element.addEventListener('click', () => {
+        cell.element.parentElement.classList.add("active-row")
     })
 })
+// BPMinput.addEventListener("submit", (e) =>{
+//     e.preventDefault()
+//     console.log(e)
+// })
 
 function setupCells () {
     const collectedCells = document.querySelectorAll(".cell")
@@ -47,12 +57,12 @@ function setUpTrackLine() {
  function moveTrackLine() {
     setTrackLinePosition()
     let currPositionX = trackLine.getBoundingClientRect().left
-    const anim = setInterval(animate,5)
+    const anim = setInterval(animate,10)
     function animate() {
         isTouchingRow ()
         currPositionX++
         const newPosition = currPositionX
-        if(newPosition >= stageWidth*1.46) clearInterval(anim)
+        if(newPosition >= stageWidth*1.25) clearInterval(anim)
         trackLine.style.left = `${newPosition}px`;
     }
  }
@@ -66,13 +76,28 @@ function isTouchingRow () {
     for(let i = 0; i < allRows.length; i++) {
         const currRow = allRows[i]
         if(trackLine.getBoundingClientRect().x + trackLine.offsetWidth > currRow.getBoundingClientRect().x && trackLine.getBoundingClientRect().x < currRow.getBoundingClientRect().x + currRow.offsetWidth){
-            currRow.classList.add("active")
+            activeCells(currRow)
         } else{
-            currRow.classList.remove("active")
+            currRow.classList.remove("active-row")
         } 
     }
 }
 
-// function trackLineIsAtEnd() {
+function activeCells(row) {
+//RE-VISIT THIS ONCE YOU MADE CELLS CLICKABLE
+
+    // row.classList.add("active-row")
+    // row.forEach(cell => {
+    //     cell.active = true
+    //     cell.sound = new Audio(cell.element.dataset.sound)
+    //     cell.sound.play()
+    // })
+}
+
+// function playSound(cell) {
 
 // }
+
+function changeBPM() {
+
+}
