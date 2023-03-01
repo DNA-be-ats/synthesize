@@ -5,7 +5,8 @@ const atTheReady = setupCells()
 const allRows = document.querySelectorAll(".row")
 const BPMButton = document.querySelector("#BPM")
 const BPMinput = document.querySelector("#BPMinput")
-
+const possibleCellSounds = [new Audio('audio-assets/!benjamino [808] @typical1k.wav'),new Audio('audio-assets/Crash (Zay) (2).wav'), new Audio('audio-assets/Thin Clap @thecxdy.wav')]
+const possibleCellColors = ["#970380","#2e1258","#fae273"]
 
 let currBPM = 120
 
@@ -82,7 +83,7 @@ function isTouchingRow () {
     for(let i = 0; i < allRows.length; i++) {
         const currRow = allRows[i]
         if(trackLine.getBoundingClientRect().x + trackLine.offsetWidth > currRow.getBoundingClientRect().x && trackLine.getBoundingClientRect().x < currRow.getBoundingClientRect().x + currRow.offsetWidth){
-            activeCells(currRow)
+            playActiveCells(currRow)
         } else{
             currRow.classList.remove("active-row")
         } 
@@ -100,9 +101,20 @@ function activeCells(row) {
 //     })
 }
 
-// function playSound(cell) {
-
-// }
+function playActiveCells(row) {
+    const childrenOfRow = Array.from(row.children)
+    childrenOfRow.forEach((cell,i) => {
+        //This could be useful ill look at it later
+        // if(cell.classList.contains("active-cell")) {
+        //     cell.classList.remove("active-cell")
+        //     cell.sound.pause()
+        //     cell.sound.currentTime = 0
+        // }
+        if(cell.classList.contains("active-cell")){
+            possibleCellSounds[i].play()
+        }
+    })
+}
 
 function changeBPM() {
 
@@ -128,15 +140,8 @@ function changeCellSate(event) {
     } else {
         const childrenOfRow = Array.from(clickedCell.parentNode.children)
         clickedCell.classList.add("active-cell")
-        if(childrenOfRow.indexOf(clickedCell) === 0){
-            clickedCellStyle.backgroundColor = "#970380"
-        } else if(childrenOfRow.indexOf(clickedCell) === 1){
-            clickedCellStyle.backgroundColor = "#2e1258"
-        } else if(childrenOfRow.indexOf(clickedCell) === 2){
-            clickedCellStyle.backgroundColor = "#fae273"
-        } 
+        clickedCellStyle.backgroundColor = possibleCellColors[childrenOfRow.indexOf(clickedCell)]
     }
-   
 }
 
 // function chooseCellColor(Cell) {
