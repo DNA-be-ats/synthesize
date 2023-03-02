@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="end.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
 </head>
 <body>
-     <h3>DNA</h3>
-    <button id="SHARE">SHARE</button>
-    <button id="RESTART">RESTART</button>
-    <h1>Synthesizer</h1>
-    <div id = "button-box">
-        <button id = "beat-button" >Play</button>
-        <button id = "beat-button" >Pause</button>
-        <button id = "beat-button" onclick="window.location.href='start.html';">Start Fresh</button>
+    <div id = "game-title">
+        <h1>Hope You Enjoyed Synthesizing</h1>
+    </div>         
+    <div id="container">
+        <canvas id="canvas1"></canvas> 
+        <audio id="audio1" src ="audio-assets/Trance.mp3"></audio>
     </div>
-    <audio id="audio1"></audio>
+    <script src="audiovisual.js" defer></script>
 </body>
 </html>

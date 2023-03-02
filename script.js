@@ -16,6 +16,7 @@ const allButtons = document.getElementsByTagName('button')
 let rowCounter = 0
 let currBPM = 120
 let convertedBPM = 1000/(currBPM/60)
+
 stageWidth = stage.offsetWidth
 stageHeight = stage.offsetHeight
 setTrackLinePosition()
