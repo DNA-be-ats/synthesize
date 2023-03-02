@@ -1,21 +1,28 @@
-// let button = document.getElementByClassName("sound");
-// button.addEventListener("click",alert)
+/*
+<button id="start" class = "sound" onclick = "playAudio('clickSound.mp3'); window.location.href= './mid.html';">Start</button>
+        <br/>
+        <br>
+    
+         <i class="fa-solid fa-volume-high" onclick = "playTrance('Trance.mp3')"></i>
+         <div>
+*/
 
-// function alert(){
-//     console.log("hi")
-// //   new Audio("./sounds/clickSound.mp3").play()
-// }
+let startButton = document.getElementById("start").addEventListener("click", handleStartClick)
 
 function playAudio(){
-    new Audio("./sounds/clickSound.mp3").play()
+    new Audio("./audio-assets/clickSound.mp3").play()
 }
 
 function playTrance(){
     new Audio("../synthesize/sounds/Trance.mp3").play()
 }
 
+function goToMidPage(){
+    window.location.href= './mid.html';
+}
 
-// function playSong(){
-//     new Audio("./sounds/Trance.mp3").play();
-// }
-// playSong();
+function handleStartClick(){
+   
+    goToMidPage()
+}
+
