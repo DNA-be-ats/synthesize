@@ -13,7 +13,6 @@ const form = document.querySelector("#form")
 const allButtons = document.getElementsByTagName('button')
 
 
-
 let rowCounter = 0
 let currBPM = 120
 let convertedBPM = 1000/(currBPM/60)
@@ -52,6 +51,7 @@ function setUpSampleRowCells(){
     }
 }
 
+
 function setupCells () {
     const collectedCells = document.querySelectorAll(".cell")
     return Array.from(collectedCells).map((cell) => {
@@ -66,8 +66,6 @@ function setupCells () {
         }
     }) 
 }
-
-
 function setUpTrackLine() {
     const gameItem = document.querySelector('#track-line')
     console.log(gameItem.getBoundingClientRect().left)
@@ -76,7 +74,6 @@ function setUpTrackLine() {
     gameItem.style.position = "absolute";
     return gameItem;
 }
-
  function moveTrackLine() {
     setTrackLinePosition()
     let currPositionX = trackLine.getBoundingClientRect().left
@@ -94,12 +91,10 @@ function setUpTrackLine() {
         }
     }
  }
-
 function setTrackLinePosition() {
     const row1 = document.querySelector("#row1")
     trackLine.style.left = `${row1.getBoundingClientRect().left - 2}px`;
 }
-
 function playActiveCells() {
     const currRow = allRows[rowCounter]
     const childrenOfRow = Array.from(currRow.children)
@@ -114,13 +109,11 @@ function playActiveCells() {
         rowCounter = 0
     }
 }
-
 function changeBPM(e) {
     e.preventDefault()
     currBPM = Number(e.target.children[1].value)
     convertedBPM = 1000/(currBPM/60)
 }
-
 function changeCellSate(event) {
     const clickedCell = event.target
     let clickedCellStyle = clickedCell.style
@@ -135,14 +128,12 @@ function changeCellSate(event) {
         clickedCellStyle.backgroundColor = possibleCellColors[childrenOfRow.indexOf(clickedCell)]
     }
 }
-
 function resetAllCells() {
     atTheReady.forEach(cell => {
         cell.element.classList.remove("active-cell")
         cell.element.style.backgroundColor = "black"
     })
 }
-
 function playAudio(){
     new Audio("audio-assets/clickSound.mp3").play()
 }
