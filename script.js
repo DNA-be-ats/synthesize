@@ -10,15 +10,13 @@ const BPMinput = document.querySelector("#BPMinput")
 const possibleCellSounds = [new Audio('audio-assets/!anotherdownohat [ohat] @typical1k.wav'),new Audio('audio-assets/CB_Clap.wav'), new Audio('audio-assets/CB_Hat.wav'),new Audio("audio-assets/CB_Kick.wav"), new Audio("audio-assets/CB_snare.wav")]
 const possibleCellColors = ["#970380","#2e1258","#fae273",'red','blue']
 const form = document.querySelector("#form")
+const allButtons = document.getElementsByTagName('button')
+
+
+
 let rowCounter = 0
 let currBPM = 120
 let convertedBPM = 1000/(currBPM/60)
-
-
-
-
-
-
 stageWidth = stage.offsetWidth
 stageHeight = stage.offsetHeight
 setTrackLinePosition()
@@ -123,16 +121,6 @@ function changeBPM(e) {
     convertedBPM = 1000/(currBPM/60)
 }
 
-
-/////////////////////////////////////////////
-////Attempting Audio Import for Samples
-////////////////////////////////////////////
-// bass.addEventListener("click", function(e){
-//     console.log(e)
-//     const bassAudio = document.getElementById("sample-sound");
-//     // const audioCtx = new AudioContext(); 
-//     bassAudio.play()
-
 function changeCellSate(event) {
     const clickedCell = event.target
     let clickedCellStyle = clickedCell.style
@@ -155,11 +143,6 @@ function resetAllCells() {
     })
 }
 
-
-document.addEventListener("DOMContentLoaded", (e) => { 
-    //create a synth and connect it to the main output (your speakers)
-    const synth = new Tone.Synth().toDestination();
-
-    //play a middle 'C' for the duration of an 8th note
-    synth.triggerAttackRelease("C4", "8n");
-})
+function playAudio(){
+    new Audio("audio-assets/clickSound.mp3").play()
+}
