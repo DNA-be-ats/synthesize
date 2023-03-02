@@ -2,16 +2,27 @@
     box-sizing: border-box;
 }
 
-/* body {
-    width:100vw;
-    height:100vh;
-    background-image: url(https://img.freepik.com/free-vector/neon-synthwave-border-dark-purple-blog-banner-template-vector_53876-136308.jpg);
-} */
+body {
+    font-family: 'Oi', cursive;
+    font-size: 20px;    
+}
+
+.font-switch{
+    font-weight: lighter;
+}
 
 #background {
     width: 100vw;
     height: 100vh;
 }
+
+h1 {
+    font-family: 'Oi', cursive;
+    font-size: 65px;
+    font-weight: normal; 
+    color: white;
+    letter-spacing: 5px;
+  }
 
 :root {
     --cell-size: 50px;
@@ -31,6 +42,7 @@
 
 h3 {
     margin-top: 4px;
+    /* font-weight: 100; */
 }
 
 #mid-header {
@@ -67,12 +79,18 @@ h3 {
 
 #track-line {
     width: 10px;
-    height: 250px;
+    height: 385px;
     background-color: white;
 }
 
 #sample-row {
     margin-right:70px;
+
+}
+
+#sample-row > *{
+    display:flex;
+    justify-content: center;
 }
 
 #bass {

@@ -7,44 +7,80 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mid.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
     <script  src="script.js" defer></script>
+    <script src="http://unpkg.com/tone"></script>
 </head>
 <body>
-    <img src="https://img.freepik.com/free-vector/neon-synthwave-border-dark-purple-blog-banner-template-vector_53876-136308.jpg" alt="" id="background">
     <div id="nav-div">
         <nav>
             <div id="logo">
-                <h3>DNA</h3>
-                <button>Beats Menu</button>
+                <h3 id="font-switch">DNA</h3>
             </div>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRqs0RjLXd7QXWPSnKjDGgFUlmvWFeZgSkptcHEG-LEFM-XWhlTz62gwKU6cZPvfFJ9RE&usqp=CAU" alt="settings">
         </nav>
         <h1 id="mid-header">Synthesize!</h1>
-        <form action="">
-            <label for="BPM">BPM:</label>
+        <form action="" id="form">
+            <label for="BPM" id="font-switch">BPM:</label>
             <input type="text" id="BPMinput" value="120">
-            <input type="button" value="Set BPM" id="BPM">
+            <input type="submit" value="Set BPM" id="BPM">
         </form>
     </div>
     <div id="stage">
         <div class="row" id="sample-row">
-            
-            <div class="cell" id="bass" data-cell>
-                <audio id = "sample-sound">
-                    <source src="audio-assets/rifle-efx.wav">
-                </audio>
+            <div class="sample-div">
+                <p>Open Hat</p>
+                <div class="cell sample-sound" data-cell>
+                    <audio>
+                        <source src="audio-assets/!anotherdownohat [ohat] @typical1k.wav">
+                    </audio>
+                </div>
             </div>
-
-            <div class="cell" id="symbol" data-cell></div>
-            <div class="cell" id="something-else" data-cell></div>
+            <div class="sample-div">
+                <p>Clap</p>
+                <div class="cell sample-sound" id="Open Hat" data-cell>
+                    <audio>
+                        <source src="audio-assets/CB_Clap.wav">
+                    </audio>
+                </div>
+            </div>   
+            <div class='sample-div'>
+                <p>Hat</p>
+                <div class="cell sample-sound" data-cell>
+                    <audio>
+                        <source src="audio-assets/CB_Hat.wav">
+                    </audio>
+                </div>
+            </div>
+            <div class="sample-div">
+                <p>Kick</p>
+                <div class="cell sample-sound" data-cell>
+                    <audio>
+                        <source src="audio-assets/CB_Kick.wav">
+                    </audio>
+                </div>
+            </div>
+            <div class="sample-div">
+                <p>Snare</p>
+                <div class="cell sample-sound" data-cell>
+                    <audio>
+                        <source src="audio-assets/CB_snare.wav">
+                    </audio>
+                </div>
+            </div>
         </div>
         <div id="track-line"></div>
         <div class="row" id="row1">
             <div class="cell" data-cell></div>
             <div class="cell" id='cell7' data-cell></div>
             <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
         </div>
         <div class="row" id="row2">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
@@ -53,8 +89,12 @@
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
         </div>
         <div class="row" id="row4">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
@@ -63,8 +103,12 @@
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
         </div>
         <div class="row" id="row6">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
@@ -73,17 +117,21 @@
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
         </div>
         <div class="row" id="row8">
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
         </div>
+        
     </div>
     <div id="beat-control-center">
             <button id="reset">Reset</button>
-            <button id="pause">Pause</button>
-            <button id="resume">Resume</button>
+            <button id="play">Play</button>
             <button id="publish">Publish</button>
     </div>
 </body>
