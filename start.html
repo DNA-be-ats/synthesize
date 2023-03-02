@@ -5,22 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="start.css"  />
+    <link rel="stylesheet" href="start.css" />
     <script src="script.js" defer></script>
     <title>Document</title>
 </head>
 <body>
+<div>
+        <audio src="../synthesize/sounds/Trance.mp3" autoplay>
+          <p>If you are reading this, it is because your browser does not support the audio element.</p>
+          <embed src="../synthesize/sounds/Trance.mp3">
+          </audio>
+    </div>
     
- 
     <h2>DNA</h2>
     <div>
         <h1>Synthesizer</h1>
     </div>
     <div id="audio-effects"></div>
-    <div id="landing-buttons">
-        <button id="start">Start</button>
-         <button id="how">How To</button>
+    <div id="landing-buttons"style="display:contents";>
+        <button id="start" class = "sound" onClick = "playAudio('clickSound.mp3')">Start</button>
+        <br/>
+        <br>
+         <button id="how"onClick = "playAudio('clickSound.mp3')">How To</button>
+         
     </div>
-
+ <script src="button.js"></script>
 </body>
 </html>

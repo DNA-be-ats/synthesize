@@ -7,7 +7,9 @@
 body {
     background-color: black;
     color: white;
-    background-color: black;
+   
+   
+  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +22,7 @@ h1 {
 }
 
 #start {
-    display: block;
+    display: contents;
     display: inline-block;
     padding: 15px 25px;
     font-size: 24px;
@@ -36,8 +38,7 @@ h1 {
 }
 
 #how{
-    display:block;
-    display: inline-block;
+    display:content;
     padding: 15px 25px;
     font-size: 24px;
     cursor: pointer;
@@ -51,7 +52,7 @@ h1 {
     box-shadow: 0 9px #1e1551;
 }
 
-#SHARE{
+#reset{
     display:block;
      display: inline-block;
     padding: 15px 25px;
@@ -67,7 +68,8 @@ h1 {
     box-shadow: 0 9px #1e1551;
 }
 
-#RESTART{
+
+#publish{
     display:block;
      display: inline-block;
     padding: 15px 25px;
@@ -77,11 +79,12 @@ h1 {
     text-decoration: none;
     outline: none;
     color: #fee34d;
-    background-color: #cd05de;
+    background-color:#cd05de ;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #1e1551;
 }
+
 
 
 img {
