@@ -9,11 +9,6 @@ const BPMinput = document.querySelector("#BPMinput")
 
 let currBPM = 120
 
-
-
-
-
-
 stageWidth = stage.offsetWidth
 stageHeight = stage.offsetHeight
 setTrackLinePosition()
@@ -112,4 +107,3 @@ bass.addEventListener("click", function(){
 
 })
 
-// Hello
