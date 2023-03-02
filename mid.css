@@ -2,11 +2,10 @@
     box-sizing: border-box;
 }
 
-/* body {
-    width:100vw;
-    height:100vh;
-    background-image: url(https://img.freepik.com/free-vector/neon-synthwave-border-dark-purple-blog-banner-template-vector_53876-136308.jpg);
-} */
+ body {
+    
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/003/184/675/original/purple-neon-border-with-flare-on-the-top-background-free-video.jpg);
+} 
 
 #background {
     width: 100vw;

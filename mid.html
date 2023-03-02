@@ -10,7 +10,7 @@
     <script  src="script.js" defer></script>
 </head>
 <body>
-    <img src="https://img.freepik.com/free-vector/neon-synthwave-border-dark-purple-blog-banner-template-vector_53876-136308.jpg" alt="" id="background">
+  
     <div id="nav-div">
         <nav>
             <div id="logo">
@@ -81,10 +81,11 @@
         </div>
     </div>
     <div id="beat-control-center">
-            <button id="reset">Reset</button>
-            <button id="pause">Pause</button>
-            <button id="resume">Resume</button>
-            <button id="publish">Publish</button>
+            <button id="reset"onClick = "playAudio('clickSound.mp3')">Reset</button>
+            <button id="pause"onClick = "playAudio('clickSound.mp3')">Pause</button>
+            <button id="resume"onClick = "playAudio('clickSound.mp3')">Resume</button>
+            <button id="publish" onclick=“window.location.href=‘./end.html’;“>Publish</button>
     </div>
+     <script src="button.js"></script>
 </body>
 </html>
