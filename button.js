@@ -10,6 +10,9 @@ function playAudio(){
     new Audio("./sounds/clickSound.mp3").play()
 }
 
+function playTrance(){
+    new Audio("../synthesize/sounds/Trance.mp3").play()
+}
 
 
 // function playSong(){

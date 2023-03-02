@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="start.css" />
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/20424c9b9b.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
 <div>
-        <audio src="../synthesize/sounds/Trance.mp3" autoplay>
-          <p>If you are reading this, it is because your browser does not support the audio element.</p>
-          <embed src="../synthesize/sounds/Trance.mp3">
-          </audio>
+
     </div>
     
     <h2>DNA</h2>
+    
     <div>
         <h1>Synthesizer</h1>
+    </div>
+    <div>
+        
     </div>
     <div id="audio-effects"></div>
     <div id="landing-buttons"style="display:contents";>
@@ -27,8 +29,16 @@
         <br/>
         <br>
          <button id="how"onClick = "playAudio('clickSound.mp3')">How To</button>
-         
+         <br/>
+        <br>
+         <!--<button id="mute" onClick = "playTrance('Trance.mp3')">Mute</button>-->
+         <i class="fa-solid fa-volume-high" onClick = "playTrance('Trance.mp3')"></i>
+         <div>
+        
     </div>
+    </div>
+    
  <script src="button.js"></script>
+
 </body>
 </html>
